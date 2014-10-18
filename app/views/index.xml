@@ -1,0 +1,10 @@
+<Alloy>
+  <TabGroup>
+    <Tab id="tabOne">
+      <Window id="mainWindow" class="container" title="Qiita">
+        <ActivityIndicator id="activityIndicator" message="Loading.." />
+        <TableView id="mainMenu" />
+      </Window>
+    </Tab>
+  </TabGroup>
+</Alloy>

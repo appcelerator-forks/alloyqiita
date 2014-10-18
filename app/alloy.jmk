@@ -1,0 +1,32 @@
+task("pre:compile", function(event,logger) {
+  logger.info('pre compile start!');
+  var wrench = require("wrench"),
+      fs = require("fs"),
+      path = require("path"),
+      controller_root = event.dir.controllers,
+      model_root = event.dir.models,
+      coffee = require("coffee-script");
+  wrench.readdirSyncRecursive(controller_root).forEach(function(controller){
+    if (controller.match("coffee$")) {
+      fs.writeFileSync(
+        path.join(controller_root,controller.replace("coffee", "js")),
+        coffee.compile(
+          fs.readFileSync(path.join(controller_root, controller)).toString(),
+          { bare: true }));
+    }
+  });
+
+  wrench.readdirSyncRecursive(model_root).forEach(function(model){
+    if (model.match("coffee$")) {
+      fs.writeFileSync(
+        path.join(model_root,model.replace("coffee", "js")),
+        coffee.compile(
+          fs.readFileSync(path.join(model_root, model)).toString(),
+          { bare: true }));
+    }
+  });
+});
+
+task("post:compile",function(event,logger){
+  logger.info('compile finish');
+});

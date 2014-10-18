@@ -1,0 +1,63 @@
+"#mainWindow":{
+    /* navTintColor:'#99cc66', */
+    statusBarStyle:0,
+    translucent:false,
+    navTintColor:"#0066ff",
+    backgroundColor:"#fcfcfc",
+    tabBarHidden:true
+}
+"#mainMenu":{
+    backgroundColor:"#fcfcfc",
+    separatorColor: '#cccccc',
+    width:Ti.UI.FULL,
+    height:Ti.UI.FULL,
+    left:0,
+    top:0,
+    zIndex:1
+    
+}
+
+"#activityIndicator":{
+    top:"50%",
+    left:"20%",
+    textAlign:'center',
+    backgroundColor:"#222",
+    font:{
+        fontSize:18
+    },
+    color:'#fff',
+    zIndex:10
+}
+
+".itemRow":{
+    width:Ti.UI.FULL,
+    height:"15%",
+    hasChild:true,
+    backgroundColor:"#fcfcfc"
+}
+
+".titleLabel":{
+    width:"90%",
+    height:"20%",
+    top:"5%",
+    left:"5%",
+    textAlign:'left',
+    color:'#59BB0C',
+    font:{
+        fontWeight:'bold',
+        fontSize:16
+    }
+
+}
+".body":{
+    width:"90%",
+    height:"70%",
+    top:"25%",
+    left:"5%",
+    textAlign:'left',
+    color:'#222',
+    font:{
+        fontSize:12
+    }
+
+}
